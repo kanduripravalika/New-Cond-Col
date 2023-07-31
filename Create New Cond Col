@@ -1,0 +1,22 @@
+def calculate_total_cost(sales, profit, ship_mode):
+    if ship_mode == "Same Day":
+        surcharge = 0.2
+    elif ship_mode == "First Class":
+        surcharge = 0.1
+    elif ship_mode == "Standard Class":
+        surcharge = 0.05
+    else:
+        surcharge = 0
+
+    total_cost = (sales - profit) * (1 + surcharge)
+    return total_cost
+
+sales_amount = 1000
+profit_amount = 200
+chosen_ship_mode = "First Class"
+total_cost = calculate_total_cost(sales_amount, profit_amount, chosen_ship_mode)
+print(f"Total Cost: ${total_cost:.2f}")
+
+output:
+
+Total Cost: $880.00
